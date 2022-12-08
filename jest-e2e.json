@@ -1,0 +1,16 @@
+{
+  "moduleFileExtensions": ["js", "json", "ts"],
+  "rootDir": "test",
+  "testEnvironment": "node",
+  "testRegex": ".e2e-spec.ts$",
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "moduleNameMapper": {
+    "@modules/(.*)": "<rootDir>/../src/modules/$1",
+    "@entities/(.*)": "<rootDir>/../src/data/entities/$1",
+    "@schemas/(.*)": "<rootDir>/../src/data/schemas/$1",
+    "@enums/(.*)": "<rootDir>/../src/data/enums/$1",
+    "@adminEnums/(.*)": "<rootDir>/../src/data/enums/admin/enums/$1"
+  }
+}
