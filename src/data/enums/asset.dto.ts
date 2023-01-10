@@ -1,7 +1,7 @@
-import { MomentCategoryEnum } from './moment-category.enum';
+import { SwanlingCategoryEnum } from './swanling-category.enum';
 
 export class Asset {
-  type: MomentCategoryEnum;
+  type: SwanlingCategoryEnum;
   url: string;
   thumbnail: string;
   taggedUsers?;

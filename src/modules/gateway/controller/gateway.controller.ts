@@ -1,14 +1,12 @@
-import { FirebaseAuthGuard } from '@modules/common/firebase-admin';
-import { Controller, Get, UseGuards } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
 import { API } from '../dto/output/api.output.dto';
 import { GatewayService } from '../service/gateway.service';
 
 @Controller('gateway')
 export class GatewayController {
-  constructor(private readonly swanlingService: GatewayService) {}
+  constructor(private readonly gatewayService: GatewayService) {}
 
   @Get('/health-check')
-  // @UseGuards(FirebaseAuthGuard)
   checkAPI(): API {
     return {
       message: 'Hello from Splurge Gateway!',
@@ -17,6 +15,16 @@ export class GatewayController {
 
   @Get('swanling/health-check')
   checkSwanlingHealth() {
-    return this.swanlingService.checkSwanlingHealth();
+    return this.gatewayService.checkSwanlingHealth();
+  }
+
+  @Get('swan/health-check')
+  checkSwanHealth() {
+    return this.gatewayService.checkSwanHealth();
+  }
+
+  @Get('purchase/health-check')
+  checkPurchaseHealth() {
+    return this.gatewayService.checkPurchaseHealth();
   }
 }
